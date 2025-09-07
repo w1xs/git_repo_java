@@ -10,6 +10,7 @@ public class Main {
 //        Laba_2.task_1();
 //        Laba_2.task_2();
 //        Laba_2.task_3();
-        Laba_2.task_4();
+//        Laba_2.task_4();
+//        Laba_2.task_5();
     }
 }
