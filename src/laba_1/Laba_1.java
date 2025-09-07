@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Laba_1 {
 
-    public static Boolean correct_int(String input){
+    private static Boolean correct_int(String input){
         if(input.matches("^\\d+")){
             return Boolean.TRUE;
         }
@@ -31,6 +31,32 @@ public class Laba_1 {
         else{
             System.out.println("Неверный ввод");
         }
+    }
+
+    public static void task_2(){//задача 2
+        String output;
+        for(int i = 1; i < 10; i++){
+            for(int j = 1; j < 10; j++){
+                System.out.println(Integer.toString(i) + " x " + Integer.toString(j) + " = " + Integer.toString(j * i));
+            }
+        }
+
+        System.out.print("   ");
+        for(int i = 1; i < 10; i++){
+            output = String.format("%3d", i);
+            System.out.print(output);
+        }
+        System.out.println();
+        for(int i = 1; i < 10; i++){
+            output = String.format("%3d", i);
+            System.out.print(output);
+            for(int j = 1; j < 10; j++){
+                output = String.format("%3d", i * j);
+                System.out.print(output);
+            }
+            System.out.println();
+        }
+        return;
     }
 
     private static Boolean is_good(int num){
