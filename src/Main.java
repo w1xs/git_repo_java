@@ -38,35 +38,59 @@ public class Main {
         ArrayList<Student> students = new ArrayList<>();
         Random random = new Random();
 
-        for(int i = 0; i < 40; i++){
+        for (int i = 0; i < 5000; i++) {
             rand_number = random.nextInt(name_gender.length);
             HashMap<String, Integer> marks = new HashMap<>();
             HashMap<String, Integer> olympiads = new HashMap<>();
-            for(int j = 0; j < school_lessons.length; j++){
-                marks.put(school_lessons[j], random.nextInt(2, 5));
+            for (String schoolLesson : school_lessons) {
+                marks.put(schoolLesson, random.nextInt(2, 6));
             }
-            for(int j = 0; j < regions.length; j++){
-                olympiads.put(regions[j], random.nextInt(0, 2));
+            for (String region : regions) {
+                olympiads.put(region, random.nextInt(0, 3));
             }
-            Schooler schooler = new Schooler(name_gender[rand_number][0], name_gender[rand_number][1], random.nextInt(6, 18), marks, olympiads);
+            Schooler schooler = new Schooler(name_gender[rand_number][0], name_gender[rand_number][1], random.nextInt(6, 19), marks, olympiads);
             schoolers.add(schooler);
         }
 
-        for(int i = 0; i < 40; i++){
+        for (int i = 0; i < 5000; i++) {
             rand_number = random.nextInt(name_gender.length);
             HashMap<String, Integer> marks = new HashMap<>();
             HashMap<String, Integer> works = new HashMap<>();
-            for(int j = 0; j < university_lessons.length; j++){
-                marks.put(university_lessons[j], random.nextInt(2, 5));
+            for (String university_lesson : university_lessons) {
+                marks.put(university_lesson, random.nextInt(2, 6));
             }
-            for(int j = 0; j < course_works.length; j++){
-                works.put(regions[j], random.nextInt(2, 5));
+            for (String course_work : course_works) {
+                // 1 = отсутствие оценки, 2-5 = оценки за курсовые
+                works.put(course_work, random.nextInt(1, 6));
             }
-            Student student = new Student(name_gender[rand_number][0], name_gender[rand_number][1], random.nextInt(18, 24), marks, works);
+            Student student = new Student(name_gender[rand_number][0], name_gender[rand_number][1], random.nextInt(18, 25), marks, works);
             students.add(student);
         }
-
-        for(Schooler man : schoolers){
-            if(man.get_marks())
+        System.out.println("Информация о девочках, получивших первое место на олимпиадах любого уровня: ");
+        for (Schooler man : schoolers) {
+            if (man.get_olympiads().containsValue(2) && man.get_gender().contains("Ж")) {
+                System.out.println(man.get_official_name());
+            }
         }
+        System.out.println();
+        System.out.println("Информация о студентах с оценками за курсовую: ");
+        for (Student man : students) {
+            if (man.get_works().containsValue(2) || man.get_works().containsValue(3) || man.get_works().containsValue(4) || man.get_works().containsValue(5)) {
+                System.out.println(man.get_official_name());
+            }
+        }
+        System.out.println();
+        System.out.println("Информация об обучающихся с повышенной стипендией: ");
+        for (Schooler man : schoolers) {
+            if (man.deserve_bonus()) {
+                System.out.println(man.get_official_name());
+            }
+        }
+        for (Student man : students) {
+            if (man.deserve_bonus()) {
+                System.out.println(man.get_official_name());
+            }
+        }
+    }
+
 }
