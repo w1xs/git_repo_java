@@ -1,19 +1,19 @@
-package laba_4;
+package laba_4_5;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Student extends Learner{
+public class Student extends Learner implements Student_compare{
     Map<String, Integer> marks = new HashMap<>();
     Map<String, Integer> works = new HashMap<>();
 
     Student(){};
-    public Student(String name, String gender, int age, Map<String, Integer> marks, Map<String, Integer> works){
-        super(name, gender, age);
+    public Student(String name, String second_name, String gender, int age, Map<String, Integer> marks, Map<String, Integer> works){
+        super(name, second_name, gender, age);
         this.marks = marks;
         this.works = works;
     }
-
+    @Override
     public Map<String, Integer> get_marks() {
         return marks;
     }
@@ -21,7 +21,7 @@ public class Student extends Learner{
     public void set_marks(Map<String, Integer> marks) {
         this.marks = marks;
     }
-
+    @Override
     public Map<String, Integer> get_works() {
         return works;
     }
@@ -29,7 +29,7 @@ public class Student extends Learner{
     public void set_works(Map<String, Integer> works) {
         this.works = works;
     }
-
+    @Override
     public Boolean deserve_bonus(){
         float mean_mark = 0;
         int count_marks = 0;
@@ -53,7 +53,27 @@ public class Student extends Learner{
     }
 
     @Override
+    public int get_learning_rate(){
+        int marks_value = 0;
+        int works_value = 0;
+        float marks_rate = 0;
+        float works_rate = 0;
+        int learning_rate = 0;
+        for(String key : marks.keySet()){
+            marks_value += marks.get(key);
+        }
+        marks_rate = ((marks.size() * 5 - marks_value) / marks.size() * 5) * 100;
+        for(String key : works.keySet()){
+            works_value += works.get(key);
+        }
+        works_rate = ((works.size() * 2 - works_value) / works.size() * 2) * 100;
+
+        learning_rate = (int)(marks_rate + works_rate) / 2;
+        return learning_rate;
+    }
+
+    @Override
     public String get_official_name() {
-        return "Студент/ка " + this.name;
+        return "Студент/ка " + this.name + " " + this.second_name;
     }
 }
