@@ -1,6 +1,6 @@
 package laba_4_5;
 
-public class Learner implements Learner_compare{
+public class Learner implements Learner_interface {
     String name;
     String second_name;
     String gender;
@@ -61,4 +61,6 @@ public class Learner implements Learner_compare{
     public String get_official_name() {
         return "Учащийся/аяся " + this.name;
     }
+
+
 }

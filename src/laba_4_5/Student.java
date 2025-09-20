@@ -3,7 +3,7 @@ package laba_4_5;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Student extends Learner implements Student_compare{
+public class Student extends Learner implements Student_interface {
     Map<String, Integer> marks = new HashMap<>();
     Map<String, Integer> works = new HashMap<>();
 
@@ -62,11 +62,11 @@ public class Student extends Learner implements Student_compare{
         for(String key : marks.keySet()){
             marks_value += marks.get(key);
         }
-        marks_rate = ((marks.size() * 5 - marks_value) / marks.size() * 5) * 100;
+        marks_rate = ((float) marks_value / (marks.size() * 5)) * 100;
         for(String key : works.keySet()){
             works_value += works.get(key);
         }
-        works_rate = ((works.size() * 2 - works_value) / works.size() * 2) * 100;
+        works_rate = ((float) works_value / (works.size() * 5)) * 100;
 
         learning_rate = (int)(marks_rate + works_rate) / 2;
         return learning_rate;

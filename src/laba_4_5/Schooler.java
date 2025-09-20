@@ -4,7 +4,7 @@ package laba_4_5;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Schooler extends Learner implements Schooler_compare {
+public class Schooler extends Learner implements Schooler_interface {
     int school_number;
     Map<String, Integer> marks = new HashMap<>();
     Map<String, Integer> olympiads = new HashMap<>();
@@ -75,11 +75,11 @@ public class Schooler extends Learner implements Schooler_compare {
         for(String key : marks.keySet()){
             marks_value += marks.get(key);
         }
-        marks_rate = ((marks.size() * 5 - marks_value) / marks.size() * 5) * 100;
+        marks_rate = ((float) marks_value / (marks.size() * 5)) * 100;
         for(String key : olympiads.keySet()){
             olympiads_value += olympiads.get(key);
         }
-        olympiads_rate = ((olympiads.size() * 2 - olympiads_value) / olympiads.size() * 2) * 100;
+        olympiads_rate = ((float) olympiads_value / (olympiads.size() * 2)) * 100;
 
         learning_rate = (int)(marks_rate + olympiads_rate) / 2;
         return learning_rate;

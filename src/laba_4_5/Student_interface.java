@@ -2,9 +2,8 @@ package laba_4_5;
 
 import java.util.Map;
 
-public interface Schooler_compare {
-    int get_school_number();
+public interface Student_interface {
     Map<String, Integer> get_marks();
-    Map<String, Integer> get_olympiads();
+    Map<String, Integer> get_works();
     Boolean deserve_bonus();
 }

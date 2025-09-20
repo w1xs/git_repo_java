@@ -1,6 +1,6 @@
 package laba_4_5;
 
-public interface Learner_compare {
+public interface Learner_interface {
     String get_name();
     String get_second_name();
     String get_gender();
