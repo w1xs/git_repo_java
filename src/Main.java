@@ -1,10 +1,12 @@
+import java.io.*;
 import java.util.*;
 
 import laba_4_5.*;
+import laba_6.Laba_6;
 import laba_4_5.comparator_classes.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 //        Лаба 3
 //        Bus first_bus = new Bus(54, 400, 0);
 //        Bus second_bus = new Bus(45, 500, 0);
@@ -233,6 +235,111 @@ public class Main {
 //            System.out.println("Успеваемость равна" + " " + man.get_learning_rate() + "%");
 //        }
 //
+
+//        Лаба 6
+        String line;
+        String[] line_parts;
+        HashMap<String, ArrayList<HashMap<String, Object>>>  classes = new HashMap<>();
+        ArrayList<HashMap<String, Object>> std = new ArrayList<>();
+        HashMap<String, Object> man = new HashMap<>();
+        try (BufferedReader reader = new BufferedReader( new FileReader("git_repo_java/src/laba_6/laba_6_data.txt"))){
+            line = reader.readLine();
+            while (line != null){
+                line_parts = line.split(" ");
+                man = new HashMap<>();
+                std = new ArrayList<>();
+                man.put("name", line_parts[1]);
+                man.put("second name", line_parts[0]);
+                man.put("lesson", line_parts[3]);
+                man.put("mark", line_parts[4]);
+                if(classes.containsKey(line_parts[2])){
+                    std = classes.get(line_parts[2]);
+                    std.add(man);
+                    classes.put(line_parts[2], std);
+                }
+                else{
+                    std.add(man);
+                    classes.put(line_parts[2], std);
+                }
+                line = reader.readLine();
+            }
+            reader.close();
+        }
+        catch (IOException e){
+            throw new RuntimeException(e);
+        }
+
+//        вывод в консоль журнала классов
+//        for(String key : classes.keySet()){
+//            System.out.println("Номер класса: " + key);
+//            for(HashMap<String, Object> schooler : classes.get(key)){
+//                System.out.println(schooler.get("name").toString() + " " + schooler.get("second name").toString() + " оценка по предмету " + schooler.get("lesson").toString() + ": " + schooler.get("mark").toString());
+//            }
+//        }
+
+//        запись журналов в файлы
+//        for(String key : classes.keySet()){
+//            try (BufferedWriter writer = new BufferedWriter(new FileWriter("git_repo_java/src/laba_6/class_"+key+"_data.txt"))) {
+//                writer.write("Журнал класса №" + key);
+//                writer.newLine();
+//                for(HashMap<String, Object> schooler : classes.get(key)){
+//                    writer.write(schooler.get("name").toString() + " " + schooler.get("second name").toString() + " оценка по предмету " + schooler.get("lesson").toString() + ": " + schooler.get("mark").toString());
+//                    writer.newLine();
+//                }
+//                writer.close();
+//            }
+//            catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }
+
+
+//        task_1
+//        System.out.println("Введите оценку для составления списка учеников: ");
+//        Scanner console_in = new Scanner(System.in);
+//        String mark = console_in.next();
+//        if(Laba_6.correct_int(mark)){
+//            Laba_6.task_1(Integer.parseInt(mark), classes);
+//        }
+//        else{
+//            System.out.println("Не верный ввод, повторите попытку.");
+//        }
+
+//        task_2
+//        Laba_6.task_2(classes);
+
+//        task_3
+//        System.out.println("Введите название предмета для составления списка учеников: ");
+//        Scanner console_in = new Scanner(System.in);
+//        String lesson = console_in.next();
+//        Laba_6.task_3(lesson, classes);
+
+//        task_4
+//        System.out.println("Доступные для составления списка учеников классы: ");
+//        for(String key : classes.keySet()){
+//            System.out.print(key + " ");
+//        }
+//        System.out.println();
+//        System.out.println("Введите номер класса для составления списка учеников: ");
+//        Scanner console_in = new Scanner(System.in);
+//        String class_number = console_in.next();
+//        if(Laba_6.correct_int(class_number)){
+//            Laba_6.task_4(Integer.parseInt(class_number), classes);
+//        }
+//        else{
+//            System.out.println("Не верный ввод");
+//        }
+
+//        task_5
+//        Scanner console_in = new Scanner(System.in);
+//        System.out.println("Введите имя ученика: ");
+//        String name = console_in.next();
+//        System.out.println("Введите фамилию ученика: ");
+//        String second_name = console_in.next();
+//        Laba_6.task_5(name, second_name, classes);
+
+//        task_6
+//        Laba_6.task_6(classes);
     }
 
 }
