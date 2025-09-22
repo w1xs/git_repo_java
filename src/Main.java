@@ -239,37 +239,37 @@ public class Main {
 //
 
 //        Лаба 6
-        String line;
-        String[] line_parts;
-        HashMap<String, ArrayList<HashMap<String, Object>>>  classes = new HashMap<>();
-        ArrayList<HashMap<String, Object>> std = new ArrayList<>();
-        HashMap<String, Object> man = new HashMap<>();
-        try (BufferedReader reader = new BufferedReader( new FileReader("git_repo_java/src/laba_6/laba_6_data.txt"))){
-            line = reader.readLine();
-            while (line != null){
-                line_parts = line.split(" ");
-                man = new HashMap<>();
-                std = new ArrayList<>();
-                man.put("name", line_parts[1]);
-                man.put("second name", line_parts[0]);
-                man.put("lesson", line_parts[3]);
-                man.put("mark", line_parts[4]);
-                if(classes.containsKey(line_parts[2])){
-                    std = classes.get(line_parts[2]);
-                    std.add(man);
-                    classes.put(line_parts[2], std);
-                }
-                else{
-                    std.add(man);
-                    classes.put(line_parts[2], std);
-                }
-                line = reader.readLine();
-            }
-            reader.close();
-        }
-        catch (IOException e){
-            throw new RuntimeException(e);
-        }
+//        String line;
+//        String[] line_parts;
+//        HashMap<String, ArrayList<HashMap<String, Object>>>  classes = new HashMap<>();
+//        ArrayList<HashMap<String, Object>> std = new ArrayList<>();
+//        HashMap<String, Object> man = new HashMap<>();
+//        try (BufferedReader reader = new BufferedReader( new FileReader("git_repo_java/src/laba_6/laba_6_data.txt"))){
+//            line = reader.readLine();
+//            while (line != null){
+//                line_parts = line.split(" ");
+//                man = new HashMap<>();
+//                std = new ArrayList<>();
+//                man.put("name", line_parts[1]);
+//                man.put("second name", line_parts[0]);
+//                man.put("lesson", line_parts[3]);
+//                man.put("mark", line_parts[4]);
+//                if(classes.containsKey(line_parts[2])){
+//                    std = classes.get(line_parts[2]);
+//                    std.add(man);
+//                    classes.put(line_parts[2], std);
+//                }
+//                else{
+//                    std.add(man);
+//                    classes.put(line_parts[2], std);
+//                }
+//                line = reader.readLine();
+//            }
+//            reader.close();
+//        }
+//        catch (IOException e){
+//            throw new RuntimeException(e);
+//        }
 
 //        вывод в консоль журнала классов
 //        for(String key : classes.keySet()){
