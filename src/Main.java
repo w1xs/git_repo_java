@@ -1,8 +1,10 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.*;
 
 import laba_4_5.*;
 import laba_6.Laba_6;
+import laba_7.Laba_7;
 import laba_4_5.comparator_classes.*;
 
 public class Main {
@@ -340,6 +342,26 @@ public class Main {
 
 //        task_6
 //        Laba_6.task_6(classes);
+
+
+//        Лаба 7
+//        task_1
+//        Integer[] row_data = {-2, -5, -2, -4, 3, -6, -2,
+//                -1, 5, 1, 1, 0, -1, 0, 3, -1, 2, 5, 2, 4, 4, 0, 6, 1, 4, 6, -1, 2, 4, 7, 11};
+//        ArrayList<Integer> data = new ArrayList<>();
+//        Collections.addAll(data, row_data);
+//        Laba_7.task_1(data);
+
+//        task_2
+//        String data = "They used 233 features including 227 " +
+//                "stylometric features and six novel social network-specific features " +
+//                "like character-based ones numbers of alphabets, uppercase " +
+//                "characters, special characters, word-based ones the total number of " +
+//                "words, average word length, the number of words with 1 char, " +
+//                "syntactic ones numbers of punctuation marks and functional " +
+//                "words, the total number of sentences and many others";
+//        Laba_7.task_2(data);
+
     }
 
 }
