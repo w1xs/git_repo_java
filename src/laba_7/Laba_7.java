@@ -1,11 +1,11 @@
-package laba_6;
+package laba_7;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
-public class Laba_6 {
+public class Laba_7 {
     public static Boolean correct_int(String input) {
         if (input.matches("^\\d+")) {
             return Boolean.TRUE;

@@ -1,6 +1,6 @@
-package laba_4_5.comparator_classes;
+package laba_5_6.comparator_classes;
 
-import laba_4_5.Learner;
+import laba_5_6.Learner;
 
 import java.util.Comparator;
 

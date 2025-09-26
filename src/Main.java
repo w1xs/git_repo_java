@@ -2,10 +2,13 @@ import java.io.*;
 import java.lang.reflect.Array;
 import java.util.*;
 
-import laba_4_5.*;
-import laba_6.Laba_6;
+import laba_4.Book;
+import laba_4.Reader;
+import laba_5_6.*;
 import laba_7.Laba_7;
-import laba_4_5.comparator_classes.*;
+import laba_5_6.comparator_classes.*;
+import laba_8.Laba_8;
+import laba_9.Laba_9;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
@@ -25,7 +28,31 @@ public class Main {
 //        System.out.println("Выручка первого автобуса: " + first_bus.calculate_occupied_places_price());
 //        System.out.println("Выручка второго автобуса: " + second_bus.calculate_occupied_places_price());
 
+
 //        Лаба 4
+//
+//        Book book_1 = new Book("Java 8. Полное издание", "Г. Шилд");
+//        Book book_2 = new Book("Крейцерова Соната", "Л. Толстой");
+//        Reader reader_1 = new Reader("Петров", 1, 4, book_1);
+//        Reader reader_2 = new Reader("Васечкин", 25, 3, book_2);
+//        int current_day = 29;
+//        int current_month = 3;
+//
+//        if(reader_1.made_it_on_time(current_day, current_month)){
+//            System.out.println(reader_1.get_name() + " сдал книгу вовремя");
+//        }
+//        else {
+//            System.out.println(reader_1.get_name() + " не сдал книгу вовремя");
+//        }
+//        if(reader_2.made_it_on_time(current_day, current_month)){
+//            System.out.println(reader_2.get_name() + " сдал книгу вовремя");
+//        }
+//        else {
+//            System.out.println(reader_2.get_name() + " не сдал книгу вовремя");
+//        }
+
+
+//        Лаба 5
 //
 //        String[][] name_gender = {{"Николай", "М"}, {"Павел", "М"}, {"Екатерина", "Ж"}, {"Валерий", "М"}, {"София", "Ж"},
 //                {"Дарья", "Ж"}, {"Михаил", "М"}, {"Алина", "Ж"}, {"Геннадий", "М"}, {"Тимофей", "М"}, {"Мария", "Ж"},
@@ -119,7 +146,7 @@ public class Main {
 //        }
 
 
-//        Лаба 5
+//        Лаба 6
 //
 //
 //        String[][] name_gender = {{"Николай", "М"}, {"Павел", "М"}, {"Екатерина", "Ж"}, {"Валерий", "М"}, {"София", "Ж"},
@@ -238,13 +265,14 @@ public class Main {
 //        }
 //
 
-//        Лаба 6
+
+//       Лаба 7
 //        String line;
 //        String[] line_parts;
 //        HashMap<String, ArrayList<HashMap<String, Object>>>  classes = new HashMap<>();
 //        ArrayList<HashMap<String, Object>> std = new ArrayList<>();
 //        HashMap<String, Object> man = new HashMap<>();
-//        try (BufferedReader reader = new BufferedReader( new FileReader("git_repo_java/src/laba_6/laba_6_data.txt"))){
+//        try (BufferedReader reader = new BufferedReader( new FileReader("git_repo_java/src/laba_6/laba_7_data.txt"))){
 //            line = reader.readLine();
 //            while (line != null){
 //                line_parts = line.split(" ");
@@ -270,16 +298,16 @@ public class Main {
 //        catch (IOException e){
 //            throw new RuntimeException(e);
 //        }
-
-//        вывод в консоль журнала классов
+//
+//       вывод в консоль журнала классов
 //        for(String key : classes.keySet()){
 //            System.out.println("Номер класса: " + key);
 //            for(HashMap<String, Object> schooler : classes.get(key)){
 //                System.out.println(schooler.get("name").toString() + " " + schooler.get("second name").toString() + " оценка по предмету " + schooler.get("lesson").toString() + ": " + schooler.get("mark").toString());
 //            }
 //        }
-
-//        запись журналов в файлы
+//
+//       запись журналов в файлы
 //        for(String key : classes.keySet()){
 //            try (BufferedWriter writer = new BufferedWriter(new FileWriter("git_repo_java/src/laba_6/class_"+key+"_data.txt"))) {
 //                writer.write("Журнал класса №" + key);
@@ -294,28 +322,28 @@ public class Main {
 //                throw new RuntimeException(e);
 //            }
 //        }
-
-
+//
+//
 //        task_1
 //        System.out.println("Введите оценку для составления списка учеников: ");
 //        Scanner console_in = new Scanner(System.in);
 //        String mark = console_in.next();
-//        if(Laba_6.correct_int(mark)){
-//            Laba_6.task_1(Integer.parseInt(mark), classes);
+//        if(Laba_7.correct_int(mark)){
+//            Laba_7.task_1(Integer.parseInt(mark), classes);
 //        }
 //        else{
 //            System.out.println("Не верный ввод, повторите попытку.");
 //        }
-
+//
 //        task_2
-//        Laba_6.task_2(classes);
-
+//        Laba_7.task_2(classes);
+//
 //        task_3
 //        System.out.println("Введите название предмета для составления списка учеников: ");
 //        Scanner console_in = new Scanner(System.in);
 //        String lesson = console_in.next();
-//        Laba_6.task_3(lesson, classes);
-
+//        Laba_7.task_3(lesson, classes);
+//
 //        task_4
 //        System.out.println("Доступные для составления списка учеников классы: ");
 //        for(String key : classes.keySet()){
@@ -325,32 +353,32 @@ public class Main {
 //        System.out.println("Введите номер класса для составления списка учеников: ");
 //        Scanner console_in = new Scanner(System.in);
 //        String class_number = console_in.next();
-//        if(Laba_6.correct_int(class_number)){
-//            Laba_6.task_4(Integer.parseInt(class_number), classes);
+//        if(Laba_7.correct_int(class_number)){
+//            Laba_7.task_4(Integer.parseInt(class_number), classes);
 //        }
 //        else{
 //            System.out.println("Не верный ввод");
 //        }
-
+//
 //        task_5
 //        Scanner console_in = new Scanner(System.in);
 //        System.out.println("Введите имя ученика: ");
 //        String name = console_in.next();
 //        System.out.println("Введите фамилию ученика: ");
 //        String second_name = console_in.next();
-//        Laba_6.task_5(name, second_name, classes);
-
+//        Laba_7.task_5(name, second_name, classes);
+//
 //        task_6
-//        Laba_6.task_6(classes);
+//        Laba_7.task_6(classes);
 
 
-//        Лаба 7
+//        Лаба 8
 //        task_1
 //        Integer[] row_data = {-2, -5, -2, -4, 3, -6, -2,
 //                -1, 5, 1, 1, 0, -1, 0, 3, -1, 2, 5, 2, 4, 4, 0, 6, 1, 4, 6, -1, 2, 4, 7, 11};
 //        ArrayList<Integer> data = new ArrayList<>();
 //        Collections.addAll(data, row_data);
-//        Laba_7.task_1(data);
+//        Laba_8.task_1(data);
 
 //        task_2
 //        String data = "They used 233 features including 227 " +
@@ -360,8 +388,58 @@ public class Main {
 //                "words, average word length, the number of words with 1 char, " +
 //                "syntactic ones numbers of punctuation marks and functional " +
 //                "words, the total number of sentences and many others";
-//        Laba_7.task_2(data);
+//        Laba_8.task_2(data);
 
+
+//        Лаба 9
+//        task_1
+//        Scanner console_in = new Scanner(System.in);
+//        System.out.println("Введите слово: ");
+//        String input = console_in.next();
+//        Laba_9.task_1(input);
+
+//       task_2
+//        Scanner console_in = new Scanner(System.in);
+//        System.out.println("Введите предложение: ");
+//        String input = console_in.nextLine();
+//        Laba_9.task_2(input);
+
+//        task_3
+//        Scanner console_in = new Scanner(System.in);
+//        System.out.println("Введите предложение: ");
+//        String input = console_in.nextLine();
+//        Laba_9.task_3(input);
+
+//        task_4
+//        Scanner console_in = new Scanner(System.in);
+//        System.out.println("Введите пароль: ");
+//        String input = console_in.nextLine();
+//        Laba_9.task_4(input);
+
+//        task_5
+//        Scanner console_in = new Scanner(System.in);
+//        System.out.println("Введите текст: ");
+//        String input = console_in.nextLine();
+//        Laba_9.task_5(input);
+
+
+//        task_6
+//        Text Example:
+//        The sun shines brightly today! My cat is walking to the sofa. I am going to the park later. It's a beautiful day for a walk?
+
+//        Scanner console_in = new Scanner(System.in);
+//        System.out.println("Введите текст: ");
+//        String input = console_in.nextLine();
+//        System.out.println("Введите ключевое слово: ");
+//        String word_to_find = console_in.next();
+//        Laba_9.task_6(input, word_to_find);
+
+
+//        task_7
+//        Scanner console_in = new Scanner(System.in);
+//        System.out.println("Введите текст телеграммы: ");
+//        String input = console_in.nextLine();
+//        Laba_9.task_7(input);
     }
 
 }

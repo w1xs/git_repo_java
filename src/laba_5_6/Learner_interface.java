@@ -1,4 +1,4 @@
-package laba_4_5;
+package laba_5_6;
 
 public interface Learner_interface {
     String get_name();

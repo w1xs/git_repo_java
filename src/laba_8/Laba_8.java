@@ -1,9 +1,9 @@
-package laba_7;
+package laba_8;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Laba_7 {
+public class Laba_8 {
     public static void task_1(ArrayList<Integer> data){
         long count_minus_days = data.stream().filter((x) -> x < 0).count();
         System.out.println("Количество дней с отрицательной температурой: " + count_minus_days);
@@ -18,7 +18,7 @@ public class Laba_7 {
         System.out.println("Максимальная температура на первой неделе марта: " + max_temp_f_week);
     }
     public static void task_2(String data){
-        Comparator_for_laba_7 comparator_for_laba_7 = new Comparator_for_laba_7();
+        Comparator_for_laba_8 comparator_for_laba_7 = new Comparator_for_laba_8();
         long count_words = Arrays.stream(data.split("[, \n]+")).filter(s -> s.endsWith("es")).count();
         System.out.println("Количество слов, заканчивающихся на \"es\": " + count_words);
         System.out.println("Слова предложения, упорядоченные по возрастанию длинны: ");
