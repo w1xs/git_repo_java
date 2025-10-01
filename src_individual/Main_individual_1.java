@@ -63,7 +63,7 @@ public class Main {
             reader.close();
         }
         catch (IOException e){
-            System.out.println("Произошла ошибка считывания на строке 40: " + e.toString());
+            System.out.println("Произошла ошибка считывания: " + e.toString());
             System.exit(228);
         }
 
