@@ -1,15 +1,15 @@
 package individual_2;
 
 public class Car {
-    int price;
-    String brand;
-    String model;
-    int year;
-    String condition;
-    double mileage;
-    String color;
-    String id;
-    int serial_number;
+    private int price;
+    private String brand;
+    private String model;
+    private int year;
+    private String condition;
+    private double mileage;
+    private String color;
+    private String id;
+    private int serial_number;
 
     public Car(){};
 
